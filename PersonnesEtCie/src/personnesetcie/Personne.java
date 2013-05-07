@@ -9,7 +9,7 @@ package personnesetcie;
  * @author roletar
  */
 public class Personne {
-    private String nom;
+    protected String nom;
     private String prenom;
     
     public Personne(String nom, String prenom)
@@ -21,5 +21,10 @@ public class Personne {
     @Override
     public String toString(){
         return "Prenom: "+this.prenom+" Nom: "+this.nom;
+    }
+    
+    public boolean hasName(String nom){
+        
+        return true;
     }
 }

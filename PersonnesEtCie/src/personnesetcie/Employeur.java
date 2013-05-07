@@ -8,10 +8,13 @@ package personnesetcie;
  *
  * @author roletar
  */
-public class Employeur extends Personne{
+public class Employeur extends Personne {
+    
+    private Entreprise e;
     
     public Employeur(String nom, String prenom){
-        
+        super(nom, prenom);
+        this.e=new Entreprise(this.nom,this);
     }
     
     public void embauche(Employe e)
@@ -26,6 +29,6 @@ public class Employeur extends Personne{
     
     @Override
     public String toString(){
-        return "";
+        return "Employeur : "+this.nom+"\n"+"liste employes :\n"+this.e.toString();
     }
 }

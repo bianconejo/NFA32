@@ -10,10 +10,11 @@ package personnesetcie;
  */
 public class Employe extends Personne {
     
+    private Entreprise e;
     
     public Employe(String nom, String prenom)
     {
-        
+        super(nom, prenom);
     }
     
     public void changeEntreprise(Entreprise nouveauBoulot)
