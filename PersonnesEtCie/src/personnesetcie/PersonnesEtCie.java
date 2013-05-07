@@ -15,11 +15,13 @@ public class PersonnesEtCie {
      */
     public static void main(String[] args) {
         Employeur patron=new Employeur("Gus","Frings");
+        System.out.println(patron.toString());
+  
+        patron.embauche(new Employe( "Pinkman","Jessie"));
+        patron.embauche(new Employe("White","Walter"));
+        patron.embauche(new Employe("Heisenberg","Dr"));        
         
-//        Employe e=new Employe("Jessie", "Pinkman");
-//        patron.embauche(new Employe("Jessie", "Pinkman"));
-//        patron.embauche(new Employe("Walter", "White"));
-//        patron.embauche(new Employe("Dr", "Heisenberg"));
+        patron.licencie("Heisenberg");
         System.out.println(patron.toString());
     }
 }

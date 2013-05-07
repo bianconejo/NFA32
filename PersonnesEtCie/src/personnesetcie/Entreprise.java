@@ -18,14 +18,17 @@ public class Entreprise  {
     public Entreprise (String nom, Employeur lePatron){
         this.nom="SARL "+nom;
         this.patron=lePatron;
+        this.listeEmployes =new Vector<Employe>();
     }
     
     @Override
     public String toString(){
         String resultat="";
         
-        if (!this.listeEmployes.isEmpty()){
-                for (int i=0; i<listeEmployes.size();i++)
+        if (this.listeEmployes.isEmpty()){
+               return this.nom+ " est une auto-entreprise";
+        }else{
+             for (int i=0; i<listeEmployes.size();i++)
                 {
                     resultat+=listeEmployes.get(i).toString()+"\n";
                 }
@@ -42,6 +45,7 @@ public class Entreprise  {
     public void embauche(Employe e)
     {
         this.listeEmployes.add(e);
+        System.out.println(this.nom+" vient d'embaucher "+e.toString());
     }
     
     public void licencie(String nomEmploye)
@@ -52,6 +56,8 @@ public class Entreprise  {
                 listeEmployes.remove(i);
             }          
         }
+        
+        System.out.println(this.nom+" vient de licencier"+nomEmploye);
         
     }
     
