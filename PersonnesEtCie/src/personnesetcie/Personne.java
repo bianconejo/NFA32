@@ -23,8 +23,10 @@ public class Personne {
         return "Prenom: "+this.prenom+" Nom: "+this.nom;
     }
     
-    public boolean hasName(String nom){
-        
-        return true;
+    public  boolean hasName(String nom){
+        if (this.nom.matches(nom)){
+            return true;
+        }
+        else return false;
     }
 }

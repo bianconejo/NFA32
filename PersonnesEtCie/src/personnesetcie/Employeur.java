@@ -10,25 +10,25 @@ package personnesetcie;
  */
 public class Employeur extends Personne {
     
-    private Entreprise e;
+    private Entreprise entreprise;
     
     public Employeur(String nom, String prenom){
         super(nom, prenom);
-        this.e=new Entreprise(this.nom,this);
+        this.entreprise=new Entreprise(nom,this);
     }
     
     public void embauche(Employe e)
     {
-        
+        this.entreprise.embauche(e);
     }
     
     public void licencie(String nomEmploye)
     {
-        
+        this.entreprise.licencie(nomEmploye);
     }
     
     @Override
     public String toString(){
-        return "Employeur : "+this.nom+"\n"+"liste employes :\n"+this.e.toString();
+        return "Employeur : "+this.nom+"\n"+"liste employes :\n"+this.entreprise.toString();
     }
 }

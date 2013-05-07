@@ -19,7 +19,7 @@ public class Employe extends Personne {
     
     public void changeEntreprise(Entreprise nouveauBoulot)
     {
-        
+        this.e=nouveauBoulot;
     }
     
 }
