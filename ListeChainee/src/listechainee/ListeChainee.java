@@ -10,10 +10,66 @@ package listechainee;
  */
 public class ListeChainee {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+   private Object element;
+   
+   public ListeChainee(){
+       
+   }
+   
+   public boolean add(Object element){
+       
+       return true;
+   }
+   
+   
+   public void add(int index, Object element)
+   {
+       
+   }
+   
+   public void clear(){
+       
+       
+   }
+   
+   
+   public boolean contains (Object element){
+       
+       return true;
+   }
+   
+   public Object get(int index){
+       Object o=new Object();
+       
+       return o;
+   }
+   
+   public int indexOf(Object element){
+       return 0;
+   }
+   
+   public boolean isEmpty(){
+       return true;
+   }
+   
+   public boolean remove(Object element){
+       return true;
+   }
+   
+   public Object remove(int index){
+       Object o=new Object();
+       
+       return o;
+   }
+   
+   public Object set (int index, Object element){
+       Object o=new Object();
+       
+       return o;
+       
+   }
+   
+   public int size(){
+       return 0;
+   }
 }
