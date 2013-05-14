@@ -10,8 +10,7 @@ package animaux;
  */
 public class Aigle extends Oiseau{
     
-     public Aigle(String nom, String cri,String nourriture){
-        super(nom,cri,nourriture,"Aigle");
-        
+     public Aigle(String nom){
+        super(nom,"Grrr","Viande fraiche","Aigle");
     }
 }

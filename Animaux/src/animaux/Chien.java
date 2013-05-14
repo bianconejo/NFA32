@@ -11,11 +11,8 @@ package animaux;
 public abstract class Chien extends AnimalRace{
     
 
-    public Chien(String nom, String cri,String nourriture, String race){
-        super(nom, cri,"Chien", nourriture,  race);
-      
+    public Chien(String nom, String race){
+        super(nom, "Ouaf","Chien", "os",  race);
     }
-    
-    
     
 }

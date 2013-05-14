@@ -8,11 +8,17 @@ package animaux;
  *
  * @author roletar
  */
-public class Humain {
+public class Humain extends Animal  {
     
-    public Humain(String nom, String cri,String espece,String nourriture){
-        
+    public Humain(String nom,String cri,String nourriture){
+  
         super(nom,cri,"humain",nourriture);
     }
     
+    
+//    @Override
+//    public String donneCri(){
+//        
+//        return this.donneCri();
+//    }
 }

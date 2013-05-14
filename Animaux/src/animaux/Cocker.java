@@ -10,8 +10,8 @@ package animaux;
  */
 public class Cocker extends Chien {
     
-    public Cocker(String nom, String cri,String nourriture){
-        super(nom,cri,nourriture,"Cocker");
+    public Cocker(String nom){
+        super(nom, "Cocker");
         
     }
     
