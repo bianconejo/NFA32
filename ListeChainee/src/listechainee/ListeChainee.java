@@ -27,7 +27,11 @@ public class ListeChainee {
        if (this.isEmpty()){
             this.element=element;
         }else{
-            this.suivant=new ListeChainee(element);
+           if (this.suivant==null){
+                this.suivant=new ListeChainee(element);
+           }else{
+               this.suivant.add(element);
+           }
         }
        return true;
    }
@@ -119,17 +123,12 @@ public class ListeChainee {
                System.out.println("la chaine n'est pas vide mais c'est le dernier maillon.");
                 return "("+this.element.toString()+")╖";
            }else{
-               
-               if(this.suivant.suivant==null){
-                   //cas 3 : il existe un maillon suivant mais c'est le seul
-               System.out.println("la chaine n'est pas vide et il reste des maillons.");
-                return "("+this.element.toString()+")->("+this.suivant.toString()+")╖";
-               }else{
+
                    //cas 4 : il existe un maillon suivant et plus
+                   return "("+this.element.toString()+")->"+this.suivant.toString();
                    
-                   
-               }
-           }
-       }
-   }
+            }
+        }
+    }
+
 }

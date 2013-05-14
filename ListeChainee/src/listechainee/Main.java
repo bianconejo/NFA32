@@ -17,9 +17,9 @@ public class Main {
         
         ListeChainee lc=new ListeChainee();
         lc.add("test");
-//        lc.add(2);
-//        lc.add(3);
-//        lc.add("test");
+        lc.add(2);
+        lc.add(3);
+        lc.add("test");
         
         System.out.println(lc);
         
