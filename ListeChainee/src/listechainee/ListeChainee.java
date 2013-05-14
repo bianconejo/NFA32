@@ -59,21 +59,24 @@ public class ListeChainee {
    }
    
    public int indexOf(Object element){
+       
+       
+       // conditions d'arrets: 
+//       1/ le maillon est vide
+//       2/ l'element courant est l'objet recherché
+//       3/ on a parcouru la liste mais rien trouvé
+     
         if (this.isEmpty())
            return -1;
         else{
-            if (this.suivant==null){
-                if (this.element.equals(element)){
-                    System.out.println("l'indice est l'element courrant");
-                    return 0;
-                }else{
-                    System.out.println("l'indice est plus loin");
-                    return 1+this.suivant.indexOf(element);
-                 }
+            if (this.element.equals(element)){
+                System.out.println("l'indice est l'element courrant");
+                return 0;
             }else{
-                    System.out.println("l'indice est plus loin");
-                    return 1+this.suivant.indexOf(element);
-            }
+                System.out.println("l'indice est plus loin");
+                return 1+this.suivant.indexOf(element);
+                }
+     
         }
        
    }
