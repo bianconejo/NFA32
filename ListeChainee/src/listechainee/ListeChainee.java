@@ -61,17 +61,21 @@ public class ListeChainee {
    public int indexOf(Object element){
         if (this.isEmpty())
            return -1;
-       else
-           if (this.suivant==null){
-               if (this.element==element){
-                   return 0;
-               }
-                
-           }else{
-                return 1+this.suivant.indexOf(element);
-           }
-        
-       return 0;
+        else{
+            if (this.suivant==null){
+                if (this.element.equals(element)){
+                    System.out.println("l'indice est l'element courrant");
+                    return 0;
+                }else{
+                    System.out.println("l'indice est plus loin");
+                    return 1+this.suivant.indexOf(element);
+                 }
+            }else{
+                    System.out.println("l'indice est plus loin");
+                    return 1+this.suivant.indexOf(element);
+            }
+        }
+       
    }
    
    public boolean isEmpty(){
@@ -114,13 +118,13 @@ public class ListeChainee {
    public String toString(){
        if (this.isEmpty()){
            //cas 1 : le maillon est vide
-           System.out.println("la chaine est vide");
+//           System.out.println("la chaine est vide");
             return "()╖";
        }else{
            
            if (this.suivant==null){
                // cas 2 : le maillon n'est pas vide mais il est orphelin
-               System.out.println("la chaine n'est pas vide mais c'est le dernier maillon.");
+//               System.out.println("la chaine n'est pas vide mais c'est le dernier maillon.");
                 return "("+this.element.toString()+")╖";
            }else{
 
