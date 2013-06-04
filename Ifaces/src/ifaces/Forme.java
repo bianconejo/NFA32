@@ -13,8 +13,9 @@ public abstract class Forme implements Englobable, Localisable{
     protected Vecteur origine;
     
     Forme (int x, int y){
-        this.origine.setX(x);
-        this.origine.setY(y);
+        Vecteur v= new Vecteur(x,y);
+        this.origine=v;
+      
     }
     
     public abstract double perimetre();
@@ -25,17 +26,7 @@ public abstract class Forme implements Englobable, Localisable{
     public String toString(){
         return "";
     }
-    
-    // methode issues des interfaces
-//    @Override
-//    public Rectangle boundingBox(){
-//        
-//        Rectangle r;
-//        
-//        return r;
-//    }
-    
-//    
+
     @Override
     public Vecteur locate(){
         return this.origine;

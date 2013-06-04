@@ -15,7 +15,9 @@ public class Carre extends Rectangle{
     }
     
     public String toString(){
-        return "Je suis un carré de coté "+this.;
+        return "Je suis un carré d'origine "+this.origine.toString()+" de coté "+this.hauteur+" mon perimetre est "+
+                this.perimetre()+" m ma surface est "+this.surface()+" m². Ma bounding box est moi meme."
+                ;
     }
     
 }

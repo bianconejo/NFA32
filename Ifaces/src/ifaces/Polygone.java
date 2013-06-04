@@ -16,6 +16,10 @@ public class Polygone extends Forme {
         
      Polygone (int x, int y){
          super(x,y);
+     
+         Vector <Vecteur> p= new Vector <Vecteur>();
+         this.points=p;
+         
          this.points.add(this.origine);
      }
      
@@ -26,14 +30,35 @@ public class Polygone extends Forme {
      
      @Override
      public String toString(){
-        return "";
+         String sPoints="";
+         
+         for(int i=0; i<this.points.size();i++){
+             sPoints+="\n"+this.points.get(i);
+         }
+         
+         
+        return "Je suis un Polygone d'origine :" +this.origine.toString()+". Je contient les points suivants :"+sPoints;
     }
      
      // methodes issues de l'héritage de Forme
      
      @Override
      public double perimetre(){
-         return 0.00;
+         
+         if (this.points.size()==1)
+             return 0.00;
+         else{
+             double perimetre=0.00;
+             
+             for(int i=0; i<this.points.size()-1;i++){
+                perimetre+=this.points.get(i).distanceTo(this.points.get(i+1));
+             }
+
+             return perimetre;
+         }
+          
+         
+        
      }
      
      @Override

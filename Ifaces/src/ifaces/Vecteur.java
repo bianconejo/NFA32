@@ -13,17 +13,16 @@ public class Vecteur implements Localisable{
     private int y;
     
     Vecteur (int x, int y){
-        
+        this.x=x;
+        this.y=y;
     }
     
     public int  getX(){
-        return 0;
-        
+        return x;
     }
     
     public int  getY(){
-        return 0;
-        
+        return y;  
     }
     
     public void setX(int x){
@@ -32,17 +31,14 @@ public class Vecteur implements Localisable{
     
     public void setY(int y){
         this.y=y;
-         
     }
     
     public double distanceTo (Vecteur v){
-        
-        return 0.00;
-        
+        return Math.sqrt(Math.pow((double)(v.x-this.x), 2)+Math.pow((double)(v.y-this.y), 2));
     }
     
     public String toString(){
-        return "";
+        return "("+this.getX()+","+this.getY()+")";
     }
     
     @Override

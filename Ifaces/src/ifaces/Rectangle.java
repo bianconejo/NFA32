@@ -15,13 +15,14 @@ public class Rectangle extends Forme {
     
     Rectangle (int x, int y, int largeur, int hauteur){
         super(x,y);
+        
         this.hauteur=hauteur;
         this.largeur=largeur;
         
     }
     
     public String toString(){
-        return "";
+        return "Je suis un rectangle de largeur "+this.largeur+" et de hauteur "+this.hauteur+" mon perimetre est "+this.perimetre()+" m ma surface est "+this.surface()+" m²";
     }
     
     // methodes issues de l'héritage de Forme
