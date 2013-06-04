@@ -14,6 +14,11 @@ public class Ifaces {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        Carre c=new Carre(0,0,2);
+        
+        System.out.println(c.toString());
+        
+        
     }
 }

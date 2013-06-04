@@ -8,23 +8,18 @@ package ifaces;
  *
  * @author roletar
  */
-public class Forme implements Englobable, Localisable{
+public abstract class Forme implements Englobable, Localisable{
     
-    private Vecteur origine;
+    protected Vecteur origine;
     
     Forme (int x, int y){
-        
+        this.origine.setX(x);
+        this.origine.setY(y);
     }
     
-    public double perimetre(){
-        return 0.00;
-    }
-    
-    
-    public double surface(){
-        return 0.00;
-    } 
-    
+    public abstract double perimetre();
+
+    public abstract double surface();
     
     @Override
     public String toString(){
@@ -32,28 +27,26 @@ public class Forme implements Englobable, Localisable{
     }
     
     // methode issues des interfaces
-    @Override
-    public Rectangle boundingBox(){
-        
-        Rectangle r;
-        
-        return r;
-    }
+//    @Override
+//    public Rectangle boundingBox(){
+//        
+//        Rectangle r;
+//        
+//        return r;
+//    }
     
-    
+//    
     @Override
     public Vecteur locate(){
-        
-        Vecteur v;
-        
-        return v;
+        return this.origine;
     }
     
     
     @Override
     public void translate(int x, int y){
         
-        
+       this.origine.setX(this.origine.getX()+x);
+       this.origine.setY(this.origine.getY()+y);
     }
     
     

@@ -26,6 +26,15 @@ public class Vecteur implements Localisable{
         
     }
     
+    public void setX(int x){
+        this.x=x;
+    }
+    
+    public void setY(int y){
+        this.y=y;
+         
+    }
+    
     public double distanceTo (Vecteur v){
         
         return 0.00;
@@ -38,17 +47,15 @@ public class Vecteur implements Localisable{
     
     @Override
     public Vecteur locate(){
-        
-        Vecteur v;
-        
-        return v;
+        return this;
     }
     
     
     @Override
     public void translate(int x, int y){
-        
-        
+        this.x+=x;
+        this.y+=y;
+       
     }
     
     
