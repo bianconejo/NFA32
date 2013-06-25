@@ -4,6 +4,7 @@
  */
 package revision;
 
+import java.util.Date;
 import java.util.Vector;
 
 /**
@@ -17,13 +18,37 @@ public abstract class Humain {
     private int numerosecu;
     private char sexe;
     
-    private Homme pere;
-    private Femme mere;
+    protected Homme pere;
+    protected Femme mere;
     
     private Vector<Humain> listeEnfants;
-    private Vector<Humain> listeFratrie;
+    protected Vector<Humain> listeFratrie;
     
-    Humain(){
+    public Humain(){
+
+        this.nom="-";
+        this.prenom="-";
+        this.datedenaissance="";
+        this.numerosecu=0;
+        this.sexe='T';
+        
+        this.pere=null;
+        this.mere=null;
+        this.listeEnfants=new Vector<Humain>();
+        this.listeFratrie=new Vector<Humain>();
+    }
+    
+    public Humain(String prenom, String nom, String ddn, int numsecu, char sexe){
+        this.nom=nom;
+        this.prenom=prenom;
+        this.datedenaissance=ddn;
+        this.numerosecu=numsecu;
+        this.sexe=sexe;
+        
+        this.pere=new Homme();
+        this.mere=new Femme();
+        this.listeEnfants=new Vector<Humain>();
+        this.listeFratrie=new Vector<Humain>();
     }
     
     public void setNom( String nom){
@@ -90,6 +115,15 @@ public abstract class Humain {
         this.listeEnfants.remove(enf);
     }
     
+    public void addFratos (Humain frat){
+        this.listeFratrie.add(frat);
+    }
+    
+    public void removeFratos (Humain frat){
+        this.listeFratrie.remove(frat);
+    }
+    
+    
     public Humain getEnfant (int i){
         return this.listeEnfants.get(i);
     }
@@ -98,5 +132,33 @@ public abstract class Humain {
         return this.listeFratrie.get(i);
     }
     
+    public Vector<Humain> getOncles(){
+        Vector<Humain> listeOncles= new Vector<Humain>();
+        
+        for (int i=0; i<this.pere.listeFratrie.size();i++){
+            if (pere.listeFratrie.get(i).getSexe()=='H')
+              listeOncles.add(pere.listeFratrie.get(i));
+        }
+        
+        for (int i=0; i<this.mere.listeFratrie.size();i++){
+            if (mere.listeFratrie.get(i).getSexe()=='H')
+              listeOncles.add(mere.listeFratrie.get(i));
+        }
+        
+        
+        return listeOncles;
+    }
+    
+    
+    @Override
+    public String toString(){
+        return this.sexe +":" +this.prenom+" "+this.nom;
+    }
+    
+    public String toRope(){  
+        return this.sexe +":" +this.prenom+" "+this.nom+" NS: "+this.numerosecu+ 
+        "/ né(e) le : "+this.datedenaissance +"/ Père :"+this.pere.getPrenom()+" "+ 
+         this.pere.getNom()+"/ Mère : "+this.mere.getPrenom()+" "+ this.mere.getNom();
+    }
     
 }
