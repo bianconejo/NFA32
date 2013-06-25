@@ -30,7 +30,7 @@ public class Femme extends Humain {
         this.menopause=menopause;
     }
     
-
+    @Override
     public String toRope(){
         return super.toRope()+"/ ménopausée: "+this.menopause;
     }

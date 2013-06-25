@@ -31,6 +31,7 @@ public class Homme extends Humain{
         this.sansProstate=prostate;
     }
    
+    @Override
     public String toRope(){
         return super.toRope()+"/ possède prostate : "+this.sansProstate;
     }

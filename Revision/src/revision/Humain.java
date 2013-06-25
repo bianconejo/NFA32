@@ -155,10 +155,11 @@ public abstract class Humain {
         return this.sexe +":" +this.prenom+" "+this.nom;
     }
     
+    
     public String toRope(){  
-        return this.sexe +":" +this.prenom+" "+this.nom+" NS: "+this.numerosecu+ 
-        "/ né(e) le : "+this.datedenaissance +"/ Père :"+this.pere.getPrenom()+" "+ 
-         this.pere.getNom()+"/ Mère : "+this.mere.getPrenom()+" "+ this.mere.getNom();
+        return this.sexe +":" +this.prenom+" "+this.nom+" \tNS: "+this.numerosecu+ 
+        "\tné(e) le : "+this.datedenaissance +"\tPère :"+this.pere.getPrenom()+" "+ 
+         this.pere.getNom()+"\tMère : "+this.mere.getPrenom()+" "+ this.mere.getNom();
     }
     
 }

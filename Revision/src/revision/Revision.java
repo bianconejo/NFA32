@@ -75,7 +75,5 @@ public class Revision {
         System.out.println(f1.toRope());
         
         
-        
-
     }
 }
